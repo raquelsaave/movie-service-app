@@ -4,7 +4,7 @@
   "description": "Netflix-like mock app",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "start": "npm run build",
     "webpack": "webpack",
     "build": "webpack -d && copy src\\index.html dist\\index.html /Y && webpack-dev-server --content-base src/ --inline --hot",
@@ -30,8 +30,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@babel/polyfill": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.7.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
@@ -39,6 +41,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^4.3.0",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "grunt": "^1.0.4",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-eslint": "^22.0.0",
@@ -51,7 +54,7 @@
     "stylelint": "~10.1.0",
     "stylelint-config-recommended": "~2.2.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.9.0"
   }
 }
