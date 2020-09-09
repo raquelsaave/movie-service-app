@@ -20,6 +20,17 @@ var config = {
 				query: {
 					presets: ["@babel/env", "@babel/react"]
 				}
+			},
+			{
+				test: /\.css$/,
+				loader: 'style-loader'
+			}, 
+			{
+				test: /\.css$/,
+				loader: 'css-loader',
+				query: {
+				  modules: true,
+				}
 			}
 		]
 	}

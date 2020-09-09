@@ -1,7 +1,7 @@
 import React from "react";
 
 import Main from "./components/main-component.js";
-// import "../scss/main.scss"
+// import styles from "../../dist/css/main.css";
 
 const App = () => {
   return (

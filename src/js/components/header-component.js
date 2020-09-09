@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import styles from "./header-component.scss"
+import styles from "../../../dist/css/main.css"
+// import "../../../dist/css/main.css"
 
 const Header = () => (
         <div>
-            <ul>
+            <ul className={styles.header}>
                 <li>
                     <Link to="/home">Home</Link>
                 </li>
