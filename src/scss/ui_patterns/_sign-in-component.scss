@@ -1,0 +1,76 @@
+.signIn {
+    margin: auto;
+    width: 40%;
+    margin-top: 100px;
+    background-color:rgba(0, 0, 0, 0.37);
+    border-radius: 2%;
+    padding: 40px;
+    .headerSignIn {
+        color: white;
+    }
+    .bodySignIn {
+        width: 100%;
+        overflow: hidden;
+        .input {
+            display: block;
+            overflow: hidden;
+        }
+        .inputGroup {
+            width: 100%;
+            background-color: gray;
+            margin: 15px 0px;
+            height: 40px;
+            border-radius: 3%;
+            border: none;
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: white;
+                opacity: 1; /* Firefox */
+                padding-left: 10px;
+                font-size: 15px;
+              }
+        }
+        .signInButton {
+            background-color: rgb(165, 49, 49);
+            color: white;
+            font-size: 15px;
+        }
+    }
+
+}
+
+
+
+// .email {
+//     width: 100%;
+//     background-color: gray;
+//     color: white;
+// }
+
+// .password {
+//     width: 100%;
+//     background-color: gray;
+//     color: white;
+// }
+
+// .inputGroup {
+//     width: 70%;
+//     margin: 20px;
+// }
+
+// .wrapper {
+//     padding: 40px 30px;
+// }
+
+// @media (min-width:801px)  { 
+//     /* tablet, landscape iPad, lo-res laptops ands desktops */
+//     .wrapper {
+//         padding: 40px 60px;
+//     }
+     
+// }
+
+// .headerSignIn {
+//     color: white;
+//     margin-left: 20px;
+// }
+

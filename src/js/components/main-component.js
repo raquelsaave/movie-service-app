@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import SignIn from "./sign-in-component.js";
+import SignInComponent from "./sign-in-component.js";
 import SelectProfile from "./select-profile-component.js";
 
 
@@ -12,7 +12,7 @@ import Latest from "./latest-component.js";
 
 const Main = () => (
     <Switch>
-      <Route exact path="/" component={SignIn} />
+      <Route exact path="/" component={SignInComponent} />
       <Route exact path="/selectprofile" component={SelectProfile} />
 
       <Route exact path="/home" component={Home} />

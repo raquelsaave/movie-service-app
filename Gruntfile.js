@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				src: ["main.scss"],
-				dest: "assets/css",
+				dest: "dist/css",
 				ext: ".css",
 				cwd: "src/scss",
 				expand: true
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 			  expand: true,
 			  cwd: "src/",
 			  src: "templates/card.html",
-			  dest: "assets/"
+			  dest: "dist/"
 			},
 		}
 	});

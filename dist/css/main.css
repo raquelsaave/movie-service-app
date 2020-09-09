@@ -1,0 +1,44 @@
+.header {
+  background-color: #333131;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-around; }
+
+body {
+  background-color: #8f8f8f; }
+
+.signIn {
+  margin: auto;
+  width: 40%;
+  margin-top: 100px;
+  background-color: rgba(0, 0, 0, 0.37);
+  border-radius: 2%;
+  padding: 40px; }
+  .signIn .headerSignIn {
+    color: white; }
+  .signIn .bodySignIn {
+    width: 100%;
+    overflow: hidden; }
+    .signIn .bodySignIn .input {
+      display: block;
+      overflow: hidden; }
+    .signIn .bodySignIn .inputGroup {
+      width: 100%;
+      background-color: gray;
+      margin: 15px 0px;
+      height: 40px;
+      border-radius: 3%;
+      border: none; }
+      .signIn .bodySignIn .inputGroup::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1;
+        /* Firefox */
+        padding-left: 10px;
+        font-size: 15px; }
+    .signIn .bodySignIn .signInButton {
+      background-color: #a53131;
+      color: white;
+      font-size: 15px; }
+
+/*# sourceMappingURL=main.css.map */
