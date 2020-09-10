@@ -1,12 +1,32 @@
 .header {
-  background-color: #333131;
+  background-color: rgba(31, 29, 29, 0.836);
   display: flex;
   text-decoration: none;
-  justify-content: space-around; }
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  height: 100%;
+  padding: 30px 15px; }
+  .header a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px; }
+
+header {
+  width: 100%;
+  position: fixed;
+  padding: 0;
+  top: 0;
+  z-index: 2;
+  height: 50px; }
 
 body {
   background-color: #272626;
   font-family: Helvetica, Arial, sans-serif; }
+
+ul {
+  padding: 0;
+  margin: 0; }
 
 .signIn {
   margin: auto;

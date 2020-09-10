@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "./header-component.js";
 
 
 import styles from '../../../dist/css/main.css';
 
 const SelectProfile = () => (
   <>
+  <Header />
   <div className={styles.selectWrapper}>
     <h1>Who's watching? </h1>
     <ul className={styles.selectUser}>

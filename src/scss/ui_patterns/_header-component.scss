@@ -1,6 +1,25 @@
 .header {
-    background-color: rgb(51, 49, 49);
+    background-color: rgba(31, 29, 29, 0.836);
     display: flex;
     text-decoration: none;
     justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
+    padding: 30px 15px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+}
+
+header {
+    width: 100%;
+    position: fixed;        
+    padding: 0;
+    top: 0;
+    z-index: 2;
+    height: 50px;
 }
