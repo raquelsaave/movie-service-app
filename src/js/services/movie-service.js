@@ -67,6 +67,22 @@ class MovieService {
 
 		})
 	}
+
+	getTvShows(page) {
+		return new Promise((resolve, reject) => {
+			let request = new XMLHttpRequest();
+			request.open("GET", `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&page=${page}`, true);
+			request.onload = function () {
+				resolve(JSON.parse(this.response))
+				// console.log(JSON.parse(this.response))
+			};
+			request.onerror = function () {
+				reject(">> There was an error while loading the API...")
+			}
+			request.send(null);
+
+		})
+	}
 }
 
 export default MovieService;
