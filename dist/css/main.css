@@ -5,7 +5,8 @@
   justify-content: space-around; }
 
 body {
-  background-color: #8f8f8f; }
+  background-color: #272626;
+  font-family: Helvetica, Arial, sans-serif; }
 
 .signIn {
   margin: auto;
@@ -66,5 +67,46 @@ body {
         margin-top: 20px; }
       .selectWrapper .selectUser .users img {
         width: 100%; }
+
+.trending {
+  width: 100%; }
+
+.trendingContainer {
+  position: relative;
+  text-align: center;
+  color: white; }
+
+.trendingTitle {
+  position: absolute;
+  bottom: 150px;
+  left: 70px; }
+
+@media screen and (min-width: 900px) {
+  .trendingTitle {
+    position: absolute;
+    bottom: 350px;
+    left: 150px; } }
+
+.itemContainer {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 5px; }
+  .itemContainer img {
+    border-radius: 3%; }
+
+.itemTitle {
+  position: absolute;
+  bottom: 120px;
+  left: 20px; }
+
+.listContainer {
+  display: flex;
+  list-style-type: none;
+  padding: 0px;
+  overflow: auto; }
+
+.mainBody {
+  color: white; }
 
 /*# sourceMappingURL=main.css.map */
