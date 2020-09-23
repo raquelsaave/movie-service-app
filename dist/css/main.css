@@ -137,4 +137,7 @@ ul {
   width: 310px;
   height: 169px; }
 
+.movies:first-of-type {
+  margin-top: 130px; }
+
 /*# sourceMappingURL=main.css.map */
