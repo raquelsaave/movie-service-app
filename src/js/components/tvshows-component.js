@@ -31,7 +31,6 @@ class TVShows extends React.Component {
             var image = ""
             if(array[i].backdrop_path == undefined || array[i].backdrop_path == null)
             {
-              console.log("null")
               image = `https://www.kindpng.com/picc/m/18-189751_movie-placeholder-hd-png-download.png`
               image =  <img className = {styles.placeholder} src={image} alt="Movie/Series Poster"/>
             } else
