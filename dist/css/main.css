@@ -22,7 +22,8 @@ header {
 
 body {
   background-color: #272626;
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0; }
 
 ul {
   padding: 0;
@@ -128,5 +129,12 @@ ul {
 
 .mainBody {
   color: white; }
+
+.tvshows:first-of-type {
+  margin-top: 130px; }
+
+.placeholder {
+  width: 310px;
+  height: 169px; }
 
 /*# sourceMappingURL=main.css.map */

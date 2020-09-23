@@ -96,6 +96,7 @@ class Home extends React.Component {
     console.log(name)
     let lists = listName.map(item => {
       let title = item.title || item.name;
+      // let imgurl= item.backdrop_path
       let img = `http://image.tmdb.org/t/p/w300${item.backdrop_path}` || `https://www.kindpng.com/picc/m/18-189751_movie-placeholder-hd-png-download.png`
       return <li className={styles.itemContainer} key={item.id}>
                 <img src={img} alt="Movie/Series Poster"/>
