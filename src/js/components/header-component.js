@@ -28,11 +28,8 @@ class Header extends React.Component {
     // }
     
     handleShift(path) {
-        console.log("path" + this.state.path)
-        // console.log(typeof this.state.path)
         var headerStructure = "";
         if(this.state.path != "/" && this.state.path != "/selectprofile"){
-            console.log("si")
             headerStructure = <ul className={styles.header}>
             <li>
                 <Link to="/home">MOVIE-SERVICE-APP</Link>
@@ -54,7 +51,6 @@ class Header extends React.Component {
             </li>
             </ul>
         } else {
-            console.log("no")
             headerStructure = <ul className={styles.header}>
             <li>
                 <Link to="/home">MOVIE-SERVICE-APP</Link>
@@ -69,7 +65,6 @@ class Header extends React.Component {
     
     render() {  
     if(this.state.path != ""){
-        console.log("path" + this.state.path)
         var structure = this.handleShift(this.state.path)
     }
      return (
