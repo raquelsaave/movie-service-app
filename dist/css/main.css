@@ -260,10 +260,8 @@ body {
   left: 20px; }
 
 .listContainer {
-  display: flex;
   list-style-type: none;
-  padding: 0px;
-  overflow: auto; }
+  padding: 0px; }
 
 .mainBody {
   color: white; }
