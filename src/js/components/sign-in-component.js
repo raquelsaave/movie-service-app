@@ -31,7 +31,7 @@ class SignInComponent extends Component {
 	render() {
 		return (
       <>
-         <Header />
+        <Header />
         <div className={styles.signIn}>
           <div className={styles.wrapper}>
             <div className={styles.headerSignIn}>
@@ -59,6 +59,13 @@ class SignInComponent extends Component {
                   </span>
                   
                 </form>
+                <div className={styles.footerSignIn}>
+                  <div className={styles.loginHelp}>
+                    <span><input type="checkbox" name="rememberME"/> Remember me</span>
+                    <span>Need help?</span>
+                  </div>
+                  <div className={styles.register}>New to Movie-App? <a href="#">Sign up now.</a></div>
+                </div>
             </div>
           </div>
         </div>

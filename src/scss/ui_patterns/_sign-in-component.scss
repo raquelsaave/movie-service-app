@@ -1,76 +1,159 @@
 .signIn {
-    margin: auto;
-    width: 40%;
-    margin-top: 100px;
-    background-color:rgba(0, 0, 0, 0.37);
-    border-radius: 2%;
-    padding: 40px;
+    // height: 100vh;
+    background-color:rgb(0, 0, 0);
+    padding: 35px 20px;
     .headerSignIn {
-        color: white;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 20px;
     }
     .bodySignIn {
         width: 100%;
         overflow: hidden;
-        .input {
-            display: block;
-            overflow: hidden;
-        }
         .inputGroup {
             width: 100%;
-            background-color: gray;
-            margin: 15px 0px;
-            height: 40px;
-            border-radius: 3%;
+            background-color: #333;
+            margin: 8px 0px;
+            height: 50px;
+            border-radius: 4px;
             border: none;
+            font-size: 22px;
+            padding-left: 10px;
+            color: white;
             &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: white;
+                color: #8c8c8c;
                 opacity: 1; /* Firefox */
-                padding-left: 10px;
-                font-size: 15px;
+                padding-left: 15px;
+                font-size: 18px;
               }
         }
         .signInButton {
-            background-color: rgb(165, 49, 49);
+            background-color: #e50914;
             color: white;
-            font-size: 15px;
+            font-size: 16px;
+            margin: 28px 0 12px;
+            font-weight: 700;
+        }
+    }
+    .footerSignIn {
+        color: gray;
+        font-size: 14px;
+        .loginHelp {
+            span {
+                display: block;
+            }
+            display: flex;
+            justify-content: space-between;
+        }
+        .register {
+            padding: 70px 0px;
+            font-size: 16px;
+            a {
+                color: white;
+                text-decoration: none;
+            }
         }
     }
 
 }
 
+@media only screen and ( min-device-width: 640px ) { 
+    .signIn {
+        padding: 75px 20px;
+    }
+}
 
+@media only screen and (min-device-width: 740px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .signIn {
+        margin: auto;
+        width: 38%;
+        margin-top: 120px;
+        background-color:rgba(0, 0, 0, 0.8);
+        border-radius: 2%;
+        padding: 70px;
+        height: 500px;
 
-// .email {
-//     width: 100%;
-//     background-color: gray;
-//     color: white;
-// }
-
-// .password {
-//     width: 100%;
-//     background-color: gray;
-//     color: white;
-// }
-
-// .inputGroup {
-//     width: 70%;
-//     margin: 20px;
-// }
-
-// .wrapper {
-//     padding: 40px 30px;
-// }
-
-// @media (min-width:801px)  { 
-//     /* tablet, landscape iPad, lo-res laptops ands desktops */
-//     .wrapper {
-//         padding: 40px 60px;
-//     }
+        .bodySignIn {
+            width: 100%;
+            overflow: hidden;
+            .input {
+                display: block;
+                overflow: hidden;
+            }
+            .inputGroup {
+                width: 100%;
+                background-color: rgb(92, 91, 91);
+                margin: 15px 0px;
+                height: 40px;
+                border-radius: 3%;
+                border: none;
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: rgb(173, 166, 166);
+                    opacity: 1; /* Firefox */
+                    padding-left: 10px;
+                    font-size: 15px;
+                  }
+            }
+            .signInButton {
+                background-color: #e50914;
+                color: white;
+                font-size: 15px;
+            }
+        }
+    
+    }
      
-// }
+}
 
-// .headerSignIn {
-//     color: white;
-//     margin-left: 20px;
-// }
+@media only screen and (min-device-width: 1024px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .signIn {
+        margin-top: 100px;
+        width: 32%;
+        padding: 50px 60px;
+    }
+     
+}
+
+@media only screen and (min-device-width: 1024px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .signIn {
+        margin-top: 100px;
+        width: 32%;
+        padding: 50px 60px;
+    }
+     
+}
+
+@media only screen and (min-device-width: 1200px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .signIn {
+        // margin-top: 100px;
+        width: 22%;
+        padding: 50px 80px;
+        .headerSignIn {
+            font-size: 22px;
+        }
+        .bodySignIn {
+            .inputGroup {
+                height: 60px;
+                &::placeholder { 
+                    font-size: 20px;
+                }
+            }
+            .signInButton {
+                font-size: 22px;
+            }
+        }
+        .footerSignIn {
+            font-size: 18px;
+            .register {
+                font-size: 20px;
+            }
+        }
+    }
+     
+}
 
