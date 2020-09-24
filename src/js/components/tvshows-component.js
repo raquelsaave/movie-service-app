@@ -1,17 +1,79 @@
 import React from "react";
 
+import Slider from "react-slick";
+
 import Header from "./header-component.js";
 import MovieService from "../services/movie-service.js";
 
-
 import styles from "../../../dist/css/main.css"
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", right: "10px"}}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", left: "10px", zIndex:"1"}}
+      onClick={onClick}
+    />
+  );
+}
 
 class TVShows extends React.Component {
   constructor(props) {
     super(props);
     this.movieService = new MovieService();
     this.state = {
+      settings: {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5.8,
+        slidesToScroll: 5.8,
+        initialSlide: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3.5,
+              slidesToScroll: 3.5,
+            }
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2.5,
+              slidesToScroll: 2.5,
+            }
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 1.7,
+              slidesToScroll: 1.7,
+            }
+          }
+        ]
+      }
     };
   }
 
@@ -47,7 +109,11 @@ class TVShows extends React.Component {
 
           let wholelist = <div className={styles.tvshows} key={Math.random()}>
                             <h2>TV</h2>
-                           <ul className={styles.listContainer}>{tvshowslist}</ul>
+                           <ul className={styles.listContainer}>
+                            <Slider {...this.state.settings}>
+                              {tvshowslist}
+                              </Slider>
+                            </ul>
                         </div>
           tvlists.push(wholelist);
         

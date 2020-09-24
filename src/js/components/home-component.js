@@ -1,9 +1,32 @@
 import React from "react";
 
+import Slider from "react-slick";
+
 import Header from "./header-component.js";
 import MovieService from "../services/movie-service.js";
 import styles from "../../../dist/css/main.css"
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", right: "10px"}}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", left: "10px", zIndex:"1"}}
+      onClick={onClick}
+    />
+  );
+}
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,7 +37,47 @@ class Home extends React.Component {
       trendinglist:[],
       genreslists:[],
       genresavailable:[],
-      mostTrending:""
+      mostTrending:"",
+      settings: {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5.8,
+        slidesToScroll: 5.8,
+        initialSlide: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3.5,
+              slidesToScroll: 3.5,
+            }
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2.5,
+              slidesToScroll: 2.5,
+            }
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 1.7,
+              slidesToScroll: 1.7,
+            }
+          }
+        ]
+      }
     };
   }
 
@@ -121,13 +184,18 @@ class Home extends React.Component {
       let list = this.handleLists(item.list, item.genre)
       return <div key={item.id}>
                 <h2>{item.genre}</h2>
-                <ul className={styles.listContainer}>{list.lists}</ul>
+                <ul className={styles.listContainer}>
+                <Slider {...this.state.settings}>
+                  {list.lists}
+                </Slider>
+                </ul>
             </div>;
     });
     return lists
   }
 
   render() {
+
     if(this.state.genreslists != undefined){
       var mostTrending = this.handleMostTrending(this.state.mostTrending)
       var trendinglist = this.handleLists(this.state.trendinglist , "Trending Now")
@@ -140,14 +208,24 @@ class Home extends React.Component {
         <Header />
 
         <div className={styles.mainBody}>
-          <div>{mostTrending}</div>
+          <div>
+            {mostTrending}
+          </div>
           <div>
             <h2>{trendinglist.name}</h2>
-            <ul className={styles.listContainer}>{trendinglist.lists}</ul>
+            <ul className={styles.listContainer}>
+            <Slider {...this.state.settings}>
+              {trendinglist.lists}
+            </Slider>
+            </ul>
           </div>
           <div>
             <h2>{popularitylist.name}</h2>
-            <ul className={styles.listContainer}>{popularitylist.lists}</ul>
+            <ul className={styles.listContainer}>
+            <Slider {...this.state.settings}>
+              {popularitylist.lists}
+            </Slider>
+            </ul>
           </div>
           {genreslists}
         </div>
