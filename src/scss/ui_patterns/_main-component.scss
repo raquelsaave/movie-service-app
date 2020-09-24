@@ -1,9 +1,27 @@
 body {
     background-color: rgb(39, 38, 38);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     margin: 0;
+    // height: 100%;
+    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/70731dc8-8977-4ed7-9a0a-421f510aea00/eee627d4-cdcf-419f-a823-ce5864140508/MX-en-20200914-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+    // background-position: center;
+    background-repeat: no-repeat;
+    // background-size: cover;
 }
 ul {
     padding:0;
     margin: 0;
+}
+
+body:after {
+    // min-height: 900px;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(17, 17, 17, 0.344);
+    transition: background-color .5s;
+    z-index: -1;
 }

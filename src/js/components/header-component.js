@@ -30,7 +30,7 @@ class Header extends React.Component {
     handleShift(path) {
         var headerStructure = "";
         if(this.state.path != "/" && this.state.path != "/selectprofile"){
-            headerStructure = <ul className={styles.header}>
+            headerStructure = <ul className={styles.headerList}>
             <li>
                 <Link to="/home">MOVIE-SERVICE-APP</Link>
             </li>
@@ -51,9 +51,9 @@ class Header extends React.Component {
             </li>
             </ul>
         } else {
-            headerStructure = <ul className={styles.header}>
-            <li>
-                <Link to="/home">MOVIE-SERVICE-APP</Link>
+            headerStructure = <ul className={styles.headerOg}>
+            <li className={styles.onlyLogo}>
+                <Link to="/home">MOVIE-APP</Link>
             </li>
 
             </ul>
@@ -69,9 +69,9 @@ class Header extends React.Component {
     }
      return (
         <>
-        <header>
+        <div className={styles.header}>
             {structure}
-        </header>
+        </div>
         </>
       );
     }
