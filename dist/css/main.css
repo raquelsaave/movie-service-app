@@ -315,6 +315,10 @@ body {
   padding: 10px 20px;
   margin: 10px; }
 
+.itemDetails {
+  background-color: rgba(0, 0, 0, 0);
+  border: none; }
+
 @media screen and (min-width: 768px) {
   .detailsFull > img {
     width: 20%; } }
@@ -351,6 +355,10 @@ body {
     font-size: 18px;
     padding: 20px;
     margin: 20px; } }
+
+@media screen and (min-width: 1200px) {
+  .modalMain {
+    top: 400px; } }
 
 @media screen and (min-width: 1400px) {
   .trendingTitle {

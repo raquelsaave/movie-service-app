@@ -40,6 +40,7 @@ class Home extends React.Component {
       genreslists:[],
       genresavailable:[],
       mostTrending:"",
+      detailInfo:{},
       settings: {
         dots: false,
         infinite: true,
@@ -144,10 +145,16 @@ class Home extends React.Component {
 
   }
 
-  showModal() {
-    console.log("HEREEEE")
-    console.log(this.state.show)
-    this.setState({ show: true });
+  showModal(item) {
+    this.setState({ 
+      show: true,
+      detailInfo : {
+        title: item.title || item.name,
+        overview: item.overview,
+        poster: item.poster_path,
+        media: item.media_type
+      }
+    });
   }
   hideModal() {
     this.setState({ show: false });
@@ -156,29 +163,6 @@ class Home extends React.Component {
 
   handleMostTrending(mostTrending) {
     var mostTrendingImg = mostTrending.backdrop_path;
-    console.log("mostTrending")
-    console.log(mostTrending)
-    // adult: false
-    // backdrop_path: "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg"
-    // genre_ids: (4) [12, 80, 18, 9648]
-    // id: 497582
-    // media_type: "movie"
-    // original_language: "en"
-    // original_title: "Enola Holmes"
-    // overview: "While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord."
-    // popularity: 139.283
-    // poster_path: "/riYInlsq2kf1AWoGm80JQW5dLKp.jpg"
-    // release_date: "2020-09-23"
-    // title: "Enola Holmes"
-    // video: false
-    // vote_average: 7.5
-    // vote_count: 124
-    var detailInfo = {
-      title: mostTrending.title,
-      overview: mostTrending.overview,
-      poster: mostTrending.poster_path,
-      media: mostTrending.media_type
-    }
     return <div className={styles.trendingContainer}>
               <img className={styles.trending} src={`http://image.tmdb.org/t/p/original${mostTrendingImg}`} alt="Movie Poster"/>
               <div className={styles.trendingTitle}>
@@ -186,9 +170,9 @@ class Home extends React.Component {
                 <SeeDetails
                   show={this.state.show}
                   handleClose={this.hideModal.bind(this)}
-                  details={detailInfo}
+                  details={this.state.detailInfo}
                 />
-                <button className={styles.moreInfo} type="button" onClick={this.showModal.bind(this)}>
+                <button className={styles.moreInfo} type="button" onClick={this.showModal.bind(this,mostTrending)}>
                   ⓘ More Info
                 </button>
               </div>
@@ -196,15 +180,19 @@ class Home extends React.Component {
   }
 
   handleLists(listName, name) {
-    console.log("listName")
-    console.log(listName)
-    console.log(name)
+
     let lists = listName.map(item => {
       let title = item.title || item.name;
-      // let imgurl= item.backdrop_path
       let img = `http://image.tmdb.org/t/p/w300${item.backdrop_path}` || `https://www.kindpng.com/picc/m/18-189751_movie-placeholder-hd-png-download.png`
       return <li className={styles.itemContainer} key={item.id}>
+                <SeeDetails
+                  show={this.state.show}
+                  handleClose={this.hideModal.bind(this)}
+                  details={this.state.detailInfo}
+                />
+                <button className={styles.itemDetails} type="button" onClick={this.showModal.bind(this,item)}>
                 <img src={img} alt="Movie/Series Poster"/>
+                </button>
                 <h4 className={styles.itemTitle}>{title}</h4>
                 {/* <span>{movie.overview}</span> */}
             </li>;
