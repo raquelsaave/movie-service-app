@@ -4,6 +4,7 @@ import Slider from "react-slick";
 
 import Header from "./header-component.js";
 import MovieService from "../services/movie-service.js";
+import SeeDetails from "./see-details-component.js"
 import styles from "../../../dist/css/main.css"
 
 function SampleNextArrow(props) {
@@ -33,6 +34,7 @@ class Home extends React.Component {
     super(props);
     this.movieService = new MovieService();
     this.state = {
+      show: false,
       popularitylist: [],
       trendinglist:[],
       genreslists:[],
@@ -142,13 +144,53 @@ class Home extends React.Component {
 
   }
 
+  showModal() {
+    console.log("HEREEEE")
+    console.log(this.state.show)
+    this.setState({ show: true });
+  }
+  hideModal() {
+    this.setState({ show: false });
+  }
+
+
   handleMostTrending(mostTrending) {
-    var mostTrendingImg = mostTrending.backdrop_path
+    var mostTrendingImg = mostTrending.backdrop_path;
+    console.log("mostTrending")
+    console.log(mostTrending)
+    // adult: false
+    // backdrop_path: "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg"
+    // genre_ids: (4) [12, 80, 18, 9648]
+    // id: 497582
+    // media_type: "movie"
+    // original_language: "en"
+    // original_title: "Enola Holmes"
+    // overview: "While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord."
+    // popularity: 139.283
+    // poster_path: "/riYInlsq2kf1AWoGm80JQW5dLKp.jpg"
+    // release_date: "2020-09-23"
+    // title: "Enola Holmes"
+    // video: false
+    // vote_average: 7.5
+    // vote_count: 124
+    var detailInfo = {
+      title: mostTrending.title,
+      overview: mostTrending.overview,
+      poster: mostTrending.poster_path,
+      media: mostTrending.media_type
+    }
     return <div className={styles.trendingContainer}>
               <img className={styles.trending} src={`http://image.tmdb.org/t/p/original${mostTrendingImg}`} alt="Movie Poster"/>
               <div className={styles.trendingTitle}>
                 <h3>{mostTrending.title}</h3>
-                <span>More Info</span>
+                <SeeDetails
+                  show={this.state.show}
+                  handleClose={this.hideModal.bind(this)}
+                  details={detailInfo}
+                />
+                <button className={styles.moreInfo} type="button" onClick={this.showModal.bind(this)}>
+                  ⓘ More Info
+                </button>
               </div>
           </div>
   }
@@ -195,7 +237,6 @@ class Home extends React.Component {
   }
 
   render() {
-
     if(this.state.genreslists != undefined){
       var mostTrending = this.handleMostTrending(this.state.mostTrending)
       var trendinglist = this.handleLists(this.state.trendinglist , "Trending Now")
